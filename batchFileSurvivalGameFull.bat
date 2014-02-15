@@ -25,21 +25,22 @@ goto Intro_Stats
 
 :Intro_Stats
 cls
-echo  Before your turn to attack, you can type 'y' when asked to view
-echo  stats and you can see what your current stats are.  If you do no
-echo  want to view your stats, enter 'n' when asked.
+echo Before your turn to attack, you can type 'y' when asked to view
+echo stats and you can see what your current stats are.  If you do no
+echo want to view your stats, enter 'n' when asked.
 echo.
 pause
 cls
-set/p T1  Try typing it now:  
+set/p T= Try typing it now:  
 if %T1%==y goto stats
 if %T1%==n
-(
+{
+cls
 echo Game Starting
 pause
 cls
 goto StartGame
-)
+}
 goto Intro_Stats
 
 
@@ -59,12 +60,12 @@ cls
 
 
 if %progress%==0
-(
+{
 echo Game Starting
 pause
 cls
 goto StartGame
-)
+}
 if %progress%==1 goto L1
 if %progress%==2 goto L2
 if %progress%==3 goto L3
@@ -78,8 +79,8 @@ if %progress%==8 goto L8
 ::===StartGame========================================================
 :StartGame
 cls
-echo  A new list of wanted men are handed to you.  Your goal:
-echo  Kill as many as you can.  
+echo A new list of wanted men are handed to you.  Your goal:
+echo Kill as many as you can.  
 echo.
 pause
 cls
@@ -88,10 +89,11 @@ got L1
 ::===Level 1===========================================================
 :L1
 cls
-echo  You approach the first man on the list.  He is just a common
-echo  theif, only carrying a small knife.  
+echo You approach the first man on the list.  He is just a common
+echo theif, only carrying a small knife.  
 echo.
-echo  Click any key to enter combat...
+echo Click any key to enter combat...
+pause>null
 cls
-echo 
+
 
