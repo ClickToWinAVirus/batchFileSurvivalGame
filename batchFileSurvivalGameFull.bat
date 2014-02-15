@@ -1,5 +1,5 @@
 @echo off
-color 1f
+color a
 
 
 ::===============================================================
@@ -18,7 +18,7 @@ set xp=0
 ::===Beginning=====================================================
 :Beginning
 cls
-echo This is a Survival Game where you will die many, many times.
+echo This is a Survival Game where you will die many times.
 pause
 cls
 goto Intro_Stats
@@ -31,9 +31,9 @@ echo want to view your stats, enter 'n' when asked.
 echo.
 pause
 cls
-set/p T= Try typing it now:  
+set/p T1= Try typing it now:  
 if %T1%==y goto Stats
-if %T1%==n(
+if %T1%==n (
 cls
 echo Game Starting
 pause
@@ -47,19 +47,19 @@ goto Intro_Stats
 :Stats
 cls
 echo  Weapon:  %weapon%
-echo  Armor:  %armor%
+echo  Armor:   %armor%
 
 echo  Health:  %health%
-echo  Skill:  %skill%
+echo  Skill:   %skill%
 
-echo  Money:  %money%
-echo  XP:  %xp%
+echo  Money:   %money%
+echo  XP:      %xp%
 echo.
 pause
 cls
 
 
-if %progress%==0(
+if %progress%==0 (
 echo Game Starting
 pause
 cls
