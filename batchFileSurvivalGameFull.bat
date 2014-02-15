@@ -38,43 +38,9 @@ color 1f
 echo Game Starting
 pause
 cls
-)
 goto StartGame
+)
 goto Intro_Stats
-
-
-::===Stats======================================================================
-:Stats
-cls
-color a
-echo  Weapon:  %weapon%
-echo  Armor:   %armor%
-
-echo  Health:  %health%
-echo  Skill:   %skill%
-
-echo  Money:   %money%
-echo  XP:      %xp%
-echo.
-pause
-cls
-
-
-if %progress%==0 (
-color 1f
-echo Game Starting
-pause
-cls
-goto StartGame
-)
-if %progress%==1 goto L1_B1
-if %progress%==
-if %progress%==
-if %progress%==
-if %progress%==
-if %progress%==
-if %progress%==
-if %progress%==
 
 
 ::===StartGame==================================================================
@@ -153,6 +119,39 @@ cls
 
 
 
+::===Stats==========================================================
+:Stats
+cls
+color a
+echo  Weapon:  %weapon%
+echo  Armor:   %armor%
+
+echo  Health:  %health%
+echo  Skill:   %skill%
+
+echo  Money:   %money%
+echo  XP:      %xp%
+echo.
+pause
+cls
+
+
+if %progress%==0 (
+color 1f
+echo Game Starting
+pause
+cls
+goto StartGame
+)
+if %progress%==1 goto L1_B1
+if %progress%==
+if %progress%==
+if %progress%==
+if %progress%==
+if %progress%==
+if %progress%==
+if %progress%==
+::===============================================================
 
 
 ::===Reward Settings=============================================
