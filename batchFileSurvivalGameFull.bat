@@ -32,19 +32,19 @@ echo.
 pause
 cls
 set/p T= Try typing it now:  
-if %T1%==y goto stats
-if %T1%==n
-{
+if %T1%==y goto Stats
+if %T1%==n(
 cls
 echo Game Starting
 pause
 cls
+)
 goto StartGame
-}
 goto Intro_Stats
 
 
 ::===Stats============================================================
+:Stats
 cls
 echo  Weapon:  %weapon%
 echo  Armor:  %armor%
@@ -59,13 +59,12 @@ pause
 cls
 
 
-if %progress%==0
-{
+if %progress%==0(
 echo Game Starting
 pause
 cls
 goto StartGame
-}
+)
 if %progress%==1 goto L1
 if %progress%==2 goto L2
 if %progress%==3 goto L3
