@@ -62,9 +62,10 @@ echo theif, only carrying a small knife.
 echo.
 echo Click any key to enter combat...
 set progress=1
+pause>null
+cls
 
 :L1_PB1
-pause>null
 cls
 echo Do you want to view your stats?
 set/p S1=
@@ -76,7 +77,9 @@ goto L1_PB1
 cls
 set progress=1.1
 echo You pull out your sword, and the thief pulls out his knife. 
-goto Damage
+pause
+cls
+goto damage
 
 :L1_B1_D
 cls
