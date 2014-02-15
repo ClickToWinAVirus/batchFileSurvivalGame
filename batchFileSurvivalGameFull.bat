@@ -6,8 +6,9 @@ color 1f
 set progress=0
 set weapon=sword
 set armor=none
-set money=0
+set health=10
 set skill=none
+set money=0
 set xp=0
 ::===============================================================
 
@@ -24,19 +25,33 @@ goto Intro_Stats
 
 :Intro_Stats
 cls
-echo  Before your turn to attack, you can type ‘stats’ and enter it to 
-set/p T1  see what your current stats are.  Try typing it now:  
-if %T1%==stats goto stats
+echo  Before your turn to attack, you can type 'y' when asked to view
+echo  stats and you can see what your current stats are.  If you do no
+echo  want to view your stats, enter 'n' when asked.
+echo.
+pause
+cls
+set/p T1  Try typing it now:  
+if %T1%==y goto stats
+if %T1%==n
+(
+echo Game Starting
+pause
+cls
+goto StartGame
+)
 goto Intro_Stats
 
 
 ::===Stats============================================================
-
 cls
 echo  Weapon:  %weapon%
 echo  Armor:  %armor%
-echo  Money:  %money%
+
+echo  Health:  %health%
 echo  Skill:  %skill%
+
+echo  Money:  %money%
 echo  XP:  %xp%
 echo.
 pause
@@ -44,12 +59,11 @@ cls
 
 
 if %progress%==0
- (
-cls
-echo Starting Game…
+(
+echo Game Starting
 pause
 cls
-goto GameStart
+goto StartGame
 )
 if %progress%==1 goto L1
 if %progress%==2 goto L2
@@ -62,8 +76,22 @@ if %progress%==8 goto L8
 
 
 ::===StartGame========================================================
-
 :StartGame
 cls
-echo  A new list of wanted men are handed to you.  
+echo  A new list of wanted men are handed to you.  Your goal:
+echo  Kill as many as you can.  
+echo.
 pause
+cls
+got L1
+
+::===Level 1===========================================================
+:L1
+cls
+echo  You approach the first man on the list.  He is just a common
+echo  theif, only carrying a small knife.  
+echo.
+echo  Click any key to enter combat...
+cls
+echo 
+
