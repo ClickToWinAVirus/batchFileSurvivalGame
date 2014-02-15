@@ -61,7 +61,7 @@ echo You approach the first man on the list.  He is just a common
 echo theif, only carrying a small knife.  
 echo.
 echo Click any key to enter combat...
-%progress%=1
+set progress=1
 
 :L1_PB1
 pause>null
@@ -74,14 +74,14 @@ goto L1_PB1
 
 :L1_B1
 cls
-%progress%=1.1
+set progress=1.1
 echo You pull out your sword, and the thief pulls out his knife. 
 goto Damage
 
 :L1_B1_D
 cls
-if %damage_minor%=0 goto L1_B1_E
-%health% = %health% - %damage_minor%
+if %damage_minor%==0 goto L1_B1_E
+set health = %health% - %damage_minor%
 echo You manage to kill the enemy, but not before the thief stabs you.
 echo You took %damage_minor% damage.
 echo Current Health:  %health%
@@ -91,7 +91,7 @@ cls
 goto Reward
 :L1_R1
 cls
-%money% = %money% + %reward_minor%
+set money = %money% + %reward_minor%
 echo You head back to the guard tower that you got the wanted list, and 
 echo bring proof of you kill.  You are rewarded with %reward_minor% coins.
 echo Money:  %money%
